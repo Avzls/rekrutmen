@@ -45,6 +45,6 @@ class HomeController extends Controller
         $data->password = bcrypt($request->password);
         $data->save();
 
-        return redirect()->back();
+        return redirect('kelolauser');
     }
 }

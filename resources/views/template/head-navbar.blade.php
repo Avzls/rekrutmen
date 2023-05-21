@@ -55,7 +55,7 @@
                         <ul class="menu">
                             <!-- add class active when on existing page -->
                             <li><a class="menu-lifeatbca " href="/" >Beranda</a></li>
-                            <li><a class="menu-karir active" href="/karir">Karir</a></li>
+                            <li><a class="menu-karir" href="/karir">Karir</a></li>
                             <li><a class="menu-magangbakti " href="/tentang">Tentang</a></li>
                             <li><a class="menu-ppappti " href="/login">Login</a></li>
                             <li><a class="menu-infoartikel " href="/register">Register</a></li>

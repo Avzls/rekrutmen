@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PelamarController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+route::get('/redirects', [HomeController::class, "index"])->middleware(['auth', 'verified'])->name('dashboard');
+
+
 Route::get('/karir', function () {
     return view('template.karir');
 });
@@ -28,13 +32,7 @@ Route::get('/kelolalowongan', function () {
     return view('kelolalowongan');
 });
 
-Route::get('/tambahdatapelamar', function () {
-    return view('tambahdatapelamar');
-});
 
-Route::get('/datapelamar', function () {
-    return view('datapelamar');
-});
 
 
 Route::middleware('auth')->group(function () {
@@ -44,10 +42,19 @@ Route::middleware('auth')->group(function () {
     })->name('tambahuser');
 });
 
-route::get('/redirects', [HomeController::class, "index"])->middleware(['auth', 'verified'])->name('dashboard');
-
 route::post('/tambahuser', [HomeController::class, "tambahuser"]);
 route::get('/kelolauser', [UserController::class, "index"]);
+
+Route::middleware('auth')->group(function () {
+    Route::get('/tambahdatapelamar', function () {
+        return view('tambahdatapelamar');
+    })->name('tambahdatapelamar');
+});
+
+route::post('/tambahdatapelamar', [PelamarController::class, "store"]);
+route::get('/datapelamar', [PelamarController::class, "index"])->name('datapelamar');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

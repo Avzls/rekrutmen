@@ -26,19 +26,19 @@
 
                         <?php $no=1; ?>
                         
-                        {{-- @foreach ($data_user as $item) --}}
+                        @foreach ($data_pelamar as $item)
                         <tr>
                             <td><?php echo $no++; ?></?php>
-                            <td>Alvin Malik</td>
-                            <td>3604011811990043</td>
-                            <td>alvinmalik1111@gmail.com</td>
-                            <td>089603396336</td>
+                            <td>{{$item['nama']}}</td>
+                            <td>{{$item['nik']}}</td>
+                            <td>{{$item['email']}}</td>
+                            <td>{{$item['nohp']}}</td>
                             <td>
                                 <span class="badge bg-primary">Detail</span>
                                 <span class="badge bg-danger">Hapus</span>
                             </td>
                         </tr>
-                        {{-- @endforeach --}}
+                        @endforeach
                     </tbody>
                 </table>
             </div>

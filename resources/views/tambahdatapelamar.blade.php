@@ -11,7 +11,7 @@
         <i class="bi bi-justify fs-3"></i>
         </a>
     </header>
-    <form action="{{ url('/tambahdatapelamar') }}" method="POST">
+    <form action="{{ url('/tambahdatapelamar') }}" method="POST" enctype="multipart/form-data">
         @csrf
        
         <section class="section">
@@ -24,7 +24,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="basicInput">Nama</label>
-                                <input type="text" class="form-control" name="nama" placeholder="Enter email" required>
+                                <input type="text" class="form-control" name="nama" placeholder="Nama" required>
                             </div>
                             
                             <div class="form-group">
@@ -73,7 +73,7 @@
                             <div class="form-group">
                                 <div class="form-group">
                                     <label for="helperText">Jenis Kelamin</label>
-                                    <select class="form-select" name="jk" required>
+                                    <select class="form-select" name="jeniskelamin" required>
                                         <option></option>
                                         <option>Laki-Laki</option>
                                         <option>Perempuan</option>
@@ -118,20 +118,20 @@
                                   <div class="mb-3">
                                     <label for="formFile" class="form-label">Transkip Nilai</label>
                                     <small class="text-muted"><i>Jika ijazah belum terbit</i></small>
-                                    <input class="form-control" type="file" id="formFile" name="transkip">
+                                    <input class="form-control" type="file" id="formFile" name="transkipnilai">
                                   </div>
                                 </div>
                             
                                 <div class="form-group">
                                   <div class="mb-3">
                                     <label for="formFile" class="form-label">Sertifikat Pendukung</label>
-                                    <input class="form-control" type="file" id="formFile" name="sertifikatpendukung">
+                                    <input class="form-control" type="file" id="formFile" name="sertifikat">
                                   </div>
                                 </div>
                                 <div class="form-group">
                                   <div class="mb-3">
                                     <label for="formFile" class="form-label">Dokumen Lainnya</label>
-                                    <input class="form-control" type="file" id="formFile" name="dokumenlainnya">
+                                    <input class="form-control" type="file" id="formFile" name="dokumen">
                                   </div>
                                 </div>
                             </div>
