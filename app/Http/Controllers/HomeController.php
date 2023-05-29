@@ -45,6 +45,11 @@ class HomeController extends Controller
         $data->password = bcrypt($request->password);
         $data->save();
 
-        return redirect('kelolauser');
+        return redirect('kelolauser')->with('toast_success', 'Data Berhasil Disimpan!');
+    }
+
+    public function destroy(string $id)
+    {
+        //
     }
 }

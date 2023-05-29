@@ -72,7 +72,7 @@ class PelamarController extends Controller
         $dokumen->store('DataPelamar');
 
 
-        return redirect()->route('datapelamar');
+        return redirect()->route('datapelamar')->with('toast_success', 'Data Berhasil Disimpan!');
     }
 
     /**
@@ -102,8 +102,15 @@ class PelamarController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $hapus = Pelamar::find($id);
+
+        if ($hapus) {
+            $hapus->delete();
+            return redirect()->route('datapelamar')->with('toast_success', 'Data berhasil dihapus.');
+        } else {
+            return redirect()->route('datapelamar')->with('toast_error', 'Data tidak ditemukan.');
+        }
     }
 }

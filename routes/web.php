@@ -53,6 +53,7 @@ Route::middleware('auth')->group(function () {
 
 route::post('/tambahdatapelamar', [PelamarController::class, "store"]);
 route::get('/datapelamar', [PelamarController::class, "index"])->name('datapelamar');
+Route::delete('/hapusdatapelamar/{id}', [PelamarController::class, 'destroy'])->name('hapusdatapelamar');
 
 
 

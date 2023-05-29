@@ -35,7 +35,11 @@
                             <td>{{$item['nohp']}}</td>
                             <td>
                                 <span class="badge bg-primary">Detail</span>
-                                <span class="badge bg-danger">Hapus</span>
+                                <form action="{{ route('hapusdatapelamar', $item->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                              <button class="badge bg-danger">Hapus</button></a>
+                            </form>
                             </td>
                         </tr>
                         @endforeach
@@ -55,4 +59,5 @@
 
 
 @include('template.footer')
+@include('sweetalert::alert')
 </div>
